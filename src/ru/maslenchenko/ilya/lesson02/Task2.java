@@ -1,5 +1,7 @@
 package ru.maslenchenko.ilya.lesson02;
 
+import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -8,9 +10,16 @@ import java.util.Scanner;
  */
 public class Task2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Type your GROSS here: ");
-        double gross = scanner.nextDouble();
-        System.out.format("Your NET is: %.2f", gross * 0.87);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Type your GROSS here: ");
+            double gross = Double.parseDouble(scanner.next());
+            System.out.format("Your NET is: %.2f", gross * 0.87);
+            scanner.close();
+        } catch (NumberFormatException e) {
+            System.out.println("Input is incorrect");
+            e.printStackTrace();
+        }
+
     }
 }

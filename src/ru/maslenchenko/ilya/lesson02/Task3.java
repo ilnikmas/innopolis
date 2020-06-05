@@ -8,10 +8,16 @@ import java.util.Scanner;
  */
 public class Task3 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Type seconds here: ");
-        long timeInSeconds = scanner.nextLong();
-        System.out.format(timeInSeconds + " seconds = " + " %.2f", Double.valueOf(timeInSeconds) / 3600.00);
-        System.out.println(" hours");
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Type seconds here: ");
+            double timeInSeconds = Double.parseDouble(scanner.next());
+            System.out.format("%.2f seconds = %.2f hours", timeInSeconds, timeInSeconds / 3600.00);
+            scanner.close();
+        } catch (NumberFormatException e) {
+            System.out.println("Input is incorrect");
+            e.printStackTrace();
+        }
+
     }
 }
