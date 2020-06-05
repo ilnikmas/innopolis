@@ -1,6 +1,5 @@
 package ru.maslenchenko.ilya.lesson02;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
