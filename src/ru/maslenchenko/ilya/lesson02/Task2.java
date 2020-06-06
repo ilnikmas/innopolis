@@ -8,15 +8,17 @@ import java.util.Scanner;
  */
 public class Task2 {
     public static void main(String[] args) {
+        Scanner scanner = null;
         try {
-            Scanner scanner = new Scanner(System.in);
+            scanner = new Scanner(System.in);
             System.out.print("Type your GROSS here: ");
             double gross = Double.parseDouble(scanner.next());
             System.out.format("Your NET is: %.2f", gross * 0.87);
-            scanner.close();
         } catch (NumberFormatException e) {
             System.out.println("Input is incorrect");
             e.printStackTrace();
+        } finally {
+            scanner.close();
         }
 
     }

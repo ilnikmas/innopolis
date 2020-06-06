@@ -9,15 +9,17 @@ import java.util.Scanner;
 public class Task1 {
     public static void main(String[] args) {
         final int oneLitreCost = 43;
+        Scanner scanner = null;
         try {
-            Scanner scanner = new Scanner(System.in);
+            scanner = new Scanner(System.in);
             System.out.print("Type amount of gazoline here: ");
             double amount = Double.parseDouble(scanner.next());
             System.out.format("%.2f litres of gasoline cost: %.2f",amount, amount * oneLitreCost);
-            scanner.close();
         } catch (NumberFormatException e) {
             System.out.println("Input is incorrect");
             e.printStackTrace();
+        } finally {
+            scanner.close();
         }
     }
 }
