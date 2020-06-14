@@ -15,15 +15,15 @@ public class Task4 {
         try (Scanner scanner = new Scanner(System.in)) {
             double sum = 0;
             NumberFormat nf = new DecimalFormat("#.##");
-            int progressionType = Integer.parseInt(scanner.next());
+            int progressionType = scanner.nextInt();
             System.out.println("Введите первый член последовательности: ");
-            double firstMember = Double.parseDouble(scanner.next());
+            double firstMember = scanner.nextDouble();
             System.out.println("Введите количество членов последовательности N: ");
-            int n = Integer.parseInt(scanner.next());
+            int n = scanner.nextInt();
             switch (progressionType) {
                 case 1: {
                     System.out.println("Введите шаг прогрессии: ");
-                    double step = Double.parseDouble(scanner.next());
+                    double step = scanner.nextDouble();
                     System.out.println("Последовательность чисел: ");
                     for (int i = 1; i <= n; i++) {
                         sum += firstMember;
@@ -34,7 +34,7 @@ public class Task4 {
                 }
                 case 2: {
                     System.out.println("Введите знаменатель прогрессии: ");
-                    double ratio = Double.parseDouble(scanner.next());
+                    double ratio = scanner.nextDouble();
                     System.out.println("Последовательность чисел: ");
                     for (int i = 1; i <= n; i++) {
                         sum += firstMember;

@@ -13,13 +13,11 @@ public class Task2 {
                    oddeven = "",
                    zero = "";
             System.out.println("Введите целое число:");
-            int number = Integer.parseInt(scanner.next());
+            int number = scanner.nextInt();
             if (number != 0) {
-                if (number < 0) {negpos = "отрицательное,";
-                } else {negpos = "положительное,";}
-                if (number % 2 == 0) {oddeven = "чётное.";}
-                else {oddeven = "нечётное.";}
-            } else {zero = "нулевое.";}
+                negpos = number < 0 ? "отрицательное" : "положительное";
+                oddeven = number %2 == 0 ? "чётное" : "нечётное";
+            }
             System.out.printf("Введённое число %s %s %s", zero, negpos, oddeven);
         } catch (NumberFormatException e) {
             System.out.println("Ошибка ввода");
