@@ -25,7 +25,7 @@ public class Run {
                 }
                 case 3: {
                     //Выбор и выдача напитка, а также уменьшение суммы на счёте
-                    deposit -= drinkOut(Processing.drinkChoice(), deposit);
+                    deposit -= drinkOut(drinkChoice(), deposit);
                     break;
                 }
             }
