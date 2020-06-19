@@ -1,4 +1,5 @@
 package ru.maslenchenko.ilya.lesson07;
+import static ru.maslenchenko.ilya.lesson07.Processing.*;
 
 public class Run {
     public static void main(String[] args) {
@@ -6,8 +7,8 @@ public class Run {
         double deposit = 0;
         //Account account = new Account();
         do {
-            Processing.printInterface();
-            choice = Processing.inputIntWithCheck(0, 3);
+            printInterface();
+            choice = inputIntWithCheck(0, 3);
             switch (choice) {
                 case 0: {
                     //Выход из программы
@@ -15,19 +16,19 @@ public class Run {
                 }
                 case 1: {
                     //Отображение меню напитков
-                    Processing.printMenu();
+                    printMenu();
                     break;
                 }
                 case 2: {
                     //Пополнение счёта
-                    deposit += Processing.inputDoubleWithCheck();
-                    //account.setDeposit(Processing.inputDoubleWithCheck());
+                    deposit += inputDoubleWithCheck();
+                    //account.setDeposit(inputDoubleWithCheck());
                     break;
                 }
                 case 3: {
                     //Выбор и выдача напитка, а также уменьшение суммы на счёте
-                    deposit -= Processing.drinkOut(Processing.drinkChoice(), deposit);
-                    //account.changeDeposit(Processing.drinkOut(Processing.drinkChoice(), account.getDeposit()));
+                    deposit -= drinkOut(Processing.drinkChoice(), deposit);
+                    //account.changeDeposit(drinkOut(drinkChoice(), account.getDeposit()));
                     break;
                 }
             }
