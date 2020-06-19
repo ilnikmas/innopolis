@@ -10,7 +10,13 @@ public class Fan extends Human {
     public void setDrunk(boolean drunk) {
         this.drunk = drunk;
     }
+    public void watchMatch() {
 
+    }
+
+    public void drinkBeer(Beer beer, double litres) {
+
+    }
     @Override
     public void yelling() {
         System.out.println("Спартак - чемпион!!!");

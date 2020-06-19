@@ -4,11 +4,20 @@ public class Human {
     private String name;
     private int age;
     private String hobby;
+    private int runSpeed;
     public void greetings() {
         System.out.printf("Здравствуйте. Меня зовут %s, мне %d лет, я %s\n", name, age, hobby);
     }
     public void yelling() {
         System.out.println("Ааааааааа!!!! Мы все умрёёёёёёём!!!!");
+    }
+
+    public int getRunSpeed() {
+        return runSpeed;
+    }
+
+    public void setRunSpeed(int runSpeed) {
+        this.runSpeed = runSpeed;
     }
 
     public String getName() {
