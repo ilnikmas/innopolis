@@ -8,7 +8,6 @@ public class Main {
         contract.setContractNumber(12345678);
         contract.setContractData("12.12.2020");
         contract.setGoodsList(new String[]{"Апельсин", "Банан", "Кокос"});
-        String actnumber = "Act № " + getAct(contract).getContractNumber();
-        System.out.println(actnumber);
+        getAct(contract);
     }
 }

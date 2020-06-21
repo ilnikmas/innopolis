@@ -1,32 +1,31 @@
 package ru.maslenchenko.ilya.lesson08.Task3;
 
-import java.util.Date;
-
 public class Act {
-    private int contractNumber;
-    private String contractData;
+    private int actNumber;
+    private String actData;
     private String[] goodsList;
 
-    Act(int contractNumber, String contractData, String[] goodsList) {
-        this.contractNumber = contractNumber;
-        this.contractData = contractData;
+    Act(int actNumber, String actData, String[] goodsList) {
+        this.actNumber = actNumber;
+        this.actData = actData;
         this.goodsList = goodsList;
 
     }
-    public int getContractNumber() {
-        return contractNumber;
+
+    public int getActNumber() {
+        return actNumber;
     }
 
-    public void setContractNumber(int contractNumber) {
-        this.contractNumber = contractNumber;
+    public void setActNumber(int actNumber) {
+        this.actNumber = actNumber;
     }
 
-    public String getContractData() {
-        return contractData;
+    public String getActData() {
+        return actData;
     }
 
-    public void setContractData(String contractData) {
-        this.contractData = contractData;
+    public void setActData(String actData) {
+        this.actData = actData;
     }
 
     public String[] getGoodsList() {
