@@ -30,7 +30,7 @@ public class Run {
                 }
             }
 
-        } while (choice != 0);
+        } while (true);
     }
 }
 
