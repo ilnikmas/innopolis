@@ -11,7 +11,7 @@ public class Processing {
     }
 
     public static void printMenu() {
-        for (Menu.Assortiment a : Menu.Assortiment.values()) {
+        for (Assortment a : Assortment.values()) {
             System.out.printf("%d: %s, цена %.2f\n", a.getButton(), a.getDrink(), a.getPrice());
         }
     }
@@ -24,7 +24,7 @@ public class Processing {
     public static double drinkOut(int drink, double deposit) {
         double price = 0;
         if (deposit > 0) {
-            for (Menu.Assortiment a : Menu.Assortiment.values()) {
+            for (Assortment a : Assortment.values()) {
                 if (a.getButton() == drink) {
                     if (a.getPrice() <= deposit) {
                         System.out.printf("Получите свой напиток: %s\n\n\n", a.getDrink());
