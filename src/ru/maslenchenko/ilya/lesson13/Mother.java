@@ -14,9 +14,8 @@ class Mother {
         }
         return Food.valueOf(food);
     }
-    public static void main(String[] args) throws ChildException {
+    public static void main(String[] args) {
         Mother mother = new Mother();
         Child.toEat(mother.feed());
-
     }
 }

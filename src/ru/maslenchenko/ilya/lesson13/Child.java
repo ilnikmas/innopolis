@@ -1,7 +1,7 @@
 package ru.maslenchenko.ilya.lesson13;
 
 class Child {
-    public static void toEat(Food food) throws ChildException {
+    public static void toEat(Food food) {
         for (Food f : Food.values()) {
             if (f == food) {
                 try {
