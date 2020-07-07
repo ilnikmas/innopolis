@@ -11,6 +11,7 @@ public class Run {
             switch (choice) {
                 case 0: {
                     //Выход из программы
+                    exit();
                     return;
                 }
                 case 1: {

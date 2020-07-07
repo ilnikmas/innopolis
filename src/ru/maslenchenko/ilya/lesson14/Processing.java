@@ -10,15 +10,17 @@ public class Processing {
     private static final Logger logger = LogManager.getLogger(Processing.class);
 
     public static void printInterface() {
-        logger.trace("Method printInterface() started");
-        System.out.println("Для просмотра меню нажмите 1\nЧтобы внести деньги, нажмите 2\nДля выбора напитка нажмите 3");
+        System.out.println("Для просмотра меню нажмите 1");
+        System.out.println("Чтобы внести деньги, нажмите 2");
+        System.out.println("Для выбора напитка нажмите 3");
         System.out.println("Для проверки остатка денежных средств нажмите 4");
         System.out.println("Для завершения работы нажмите 0");
+        logger.info("Начало работы программы");
     }
 
     public static void printMenu() {
         for (Assortment a : Assortment.values()) {
-            System.out.printf("%d: %s, цена %.2f\n", a.getButton(), a.getDrink(), a.getPrice());
+            System.out.printf("%d: %s, цена %.2f%n", a.getButton(), a.getDrink(), a.getPrice());
         }
     }
 
@@ -33,12 +35,19 @@ public class Processing {
             for (Assortment a : Assortment.values()) {
                 if (a.getButton() == drink) {
                     if (a.getPrice() <= deposit) {
-                        System.out.printf("Получите свой напиток: %s\n\n\n", a.getDrink());
+                        System.out.printf("Получите свой напиток: %s%n%n%n", a.getDrink());
                         price = a.getPrice();
-                    } else System.out.println("Недостаточно денег на счёте. Пополните счёт.");
+                        logger.trace("Успешное завершение операции. Выдан напиток {}.", a.getDrink());
+                    } else {
+                        System.out.println("Недостаточно денег на счёте. Пополните счёт.");
+                        logger.warn("Недостаточно денег на счёте. На счёте {}!", deposit);
+                    }
                 }
             }
-        } else System.out.println("На вашем счёте отсутствуют средства. Пополните счёт.");
+        } else {
+            System.out.println("На вашем счёте отсутствуют средства. Пополните счёт.");
+            logger.warn("На счёте отсутствуют средства!");
+        }
         return price;
     }
 
@@ -46,13 +55,13 @@ public class Processing {
         boolean flag = true;
         Scanner scanner = null;
         int number = 0;
-        //System.out.printf("Введите цифру от %d до %d:\n", min, max);
         do {
             scanner = new Scanner(System.in);
             if (scanner.hasNextInt()) {
                 int input = scanner.nextInt();
                 if (input < min || input > max) {
                     System.out.println("Введёное число находится вне заданного диапазона. Ещё раз: ");
+                    logger.warn("Введёное число находится вне заданного диапазона. Диапазон от {} до {}, введено {}!", min, max, input);
                     flag = true;
                 } else {
                     number = input;
@@ -60,6 +69,7 @@ public class Processing {
                 }
             } else {
                 System.out.println("Вводить нужно целое число. Ещё раз: ");
+                logger.warn("Введено не целое число!");
                 flag = true;
             }
         } while (flag);
@@ -82,9 +92,14 @@ public class Processing {
                 flag = false;
             } catch (NumberFormatException e) {
                 System.out.println("Вводить нужно число. Ещё раз: ");
+                logger.error("Ошибка ввода. Вместо числа получено {}.", inputStr);
                 flag = true;
             }
         } while (flag);
         return number;
+    }
+
+    static void exit() {
+        logger.info("Завершение работы пользователем.");
     }
 }

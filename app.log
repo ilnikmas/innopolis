@@ -1,6 +1,2 @@
-2020-07-05 18:41:51,949 INFO r.m.i.l.Processing [main] Method printInterface() started 
-2020-07-05 18:43:29,347 TRACE r.m.i.l.Processing [main] Method printInterface() started 
-2020-07-07 13:09:39,454 TRACE r.m.i.l.Processing [main] Method printInterface() started 
-2020-07-07 13:09:53,233 TRACE r.m.i.l.Processing [main] Method printInterface() started 
-2020-07-07 13:15:57,740 TRACE r.m.i.l.Processing [main] Method printInterface() started 
-2020-07-07 13:16:00,476 TRACE r.m.i.l.Processing [main] Method printInterface() started 
+2020-07-07 13:55:02,487 INFO r.m.i.l.Processing [main] Начало работы программы 
+2020-07-07 13:55:20,874 TRACE r.m.i.l.Processing [main] Завершение работы пользователем. 
