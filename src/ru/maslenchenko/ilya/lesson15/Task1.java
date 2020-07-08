@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class Task1 {
-    private static final String[] operands = {"--copy", "--create", "--rename", "--remove"};
+    private static final String[] operands = {"--copy", "--create", "--rename", "--delete"};
 
     public static void main(String[] args) {
         if (args.length != 0) {
