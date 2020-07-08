@@ -28,15 +28,15 @@ public class Task1 {
                             break;
                         }
                         case "--create": {
-                            String filePath = "c:\\java\\" + args[1];
+                            String filePath = args[1];
                             Path path = Paths.get(filePath);
                             try {
                                 Files.createFile(path);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
+                            break;
                         }
-                        break;
                         case "--rename": {
                             if (args.length > 2) {
                                 File sourceFile = new File(args[1]);
