@@ -21,6 +21,7 @@ public class Task1 {
                                 Path destPath = Paths.get(args[2]);
                                 try {
                                     Files.copy(sourcePath, destPath);
+                                    System.out.println("File is successfully copied");
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
@@ -32,6 +33,7 @@ public class Task1 {
                             Path path = Paths.get(filePath);
                             try {
                                 Files.createFile(path);
+                                System.out.printf("File %s is created", path);
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }

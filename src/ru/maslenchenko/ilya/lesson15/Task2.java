@@ -1,28 +1,33 @@
 package ru.maslenchenko.ilya.lesson15;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class Task2 {
-    static StringBuilder gap = new StringBuilder(" ");
+    static StringBuilder gap = new StringBuilder("-");
 
     public static void DirList(File fileName) {
-        File file = new File(String.valueOf(fileName));
-        File folder = file.getParentFile();
-        if (file.isDirectory()) {
-            for (File dir : file.listFiles()) {
-                System.out.println(gap + dir.getName());
+        for (File dir : fileName.listFiles()) {
+            System.out.println(gap + dir.getName());
+            if (dir.isDirectory()) {
+                gap.append('-');
                 DirList(dir);
             }
-            gap.append(" ");
         }
+        gap.deleteCharAt(0);
     }
 
     public static void main(String[] args) {
-        DirList(new File(args[0]));
-        //Path pathOne = Paths.get("d:\\coding");
-        //Path pathTwo = Paths.get("d:\\coding\\hello\\bin");
-        //System.out.println(pathOne.relativize(pathTwo));
+        System.out.println("Путь к папке:");
+        Scanner s = new Scanner(System.in);
+        String path = s.nextLine();
+        File dir = new File(path);
+        if (!dir.exists()) {
+            System.out.println("Папки с введеным именем не существует!");
+        } else if (!dir.isDirectory()) {
+            System.out.println("Не является папкой!");
+        } else {
+            DirList(dir);
+        }
     }
 }
