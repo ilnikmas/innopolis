@@ -29,8 +29,7 @@ public class Task1 {
                             break;
                         }
                         case "--create": {
-                            String filePath = args[1];
-                            Path path = Paths.get(filePath);
+                            Path path = Paths.get(args[1]);
                             try {
                                 Files.createFile(path);
                                 System.out.printf("File %s is created", path);
