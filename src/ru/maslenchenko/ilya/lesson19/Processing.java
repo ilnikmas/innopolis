@@ -48,7 +48,7 @@ public class Processing {
         System.out.println("====================================================");
         for (Bill b : list) {
             sum += b.getCost();
-            System.out.printf("%-22s%6.2f x %6s%5s%10.2f%n", b.getName(), b.getPrice(), checkDouble(b.getWeight()), "=", b.getCost());
+            System.out.printf("%-22s%6.2f x %7s%4s%10.2f%n", b.getName(), b.getPrice(), checkDouble(b.getWeight()), "=", b.getCost());
         }
         System.out.println("====================================================");
         System.out.printf("%-45s%6.2f", "Итого:", sum);
