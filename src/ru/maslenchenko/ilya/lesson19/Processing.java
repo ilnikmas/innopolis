@@ -16,8 +16,7 @@ public class Processing {
             return String.format("%.3f", value);
     }
 
-    static void readFile() throws IOException {
-        Path path = Paths.get("D:\\coding\\products.txt");
+    static void readFile(Path path) throws IOException {
         FileReader fr = new FileReader(String.valueOf(path));
         BufferedReader reader = new BufferedReader(fr);
         Bill bill = new Bill();
