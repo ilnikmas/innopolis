@@ -3,6 +3,7 @@ package ru.maslenchenko.ilya.lesson21;
 public class Task1 {
     static int[][] array = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}};
     public static void main(String[] args) {
+        printArray(array);
         toLeft(array);
         printArray(array);
     }
@@ -33,5 +34,6 @@ public class Task1 {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
