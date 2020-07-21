@@ -8,13 +8,12 @@ public class Task1 {
         printArray(array);
     }
 
-    public static void toLeft(int[][] ar) {
+    static void toLeft(int[][] ar) {
         int[][] temp = new int[ar.length][];
         for (int i = 0; i < ar.length; i++) {
             temp[i] = new int[ar[i].length];
             temp[i][ar.length - 1] = 0;
         }
-
         for (int i = 0; i < ar.length; i++) {
             for (int j = 0; j < ar[i].length; j++) {
                 if (j == ar[i].length - 1) {
@@ -27,7 +26,7 @@ public class Task1 {
         }
     }
 
-    public static void printArray(int[][] ar) {
+    static void printArray(int[][] ar) {
         for (int i = 0; i < ar.length; i++) {
             for (int j = 0; j < ar[i].length; j++) {
                 System.out.printf("%d ", ar[i][j]);

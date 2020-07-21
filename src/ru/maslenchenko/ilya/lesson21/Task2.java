@@ -10,19 +10,19 @@ public class Task2 {
 
     }
 
-    public static void arrayReverse(int[] ar) {
+    static void arrayReverse(int[] ar) {
         int[] temp = new int[ar.length];
         int tmp = ar.length - 1;
         for (int i = 0; i < ar.length; i++) {
             temp[i] = ar[tmp];
             tmp--;
         }
-        for (int i = 0; i < ar.length ;i++) {
+        for (int i = 0; i < ar.length; i++) {
             ar[i] = temp[i];
         }
     }
 
-    public static void printArray(int[] ar) {
+    static void printArray(int[] ar) {
         for (int i = 0; i < ar.length; i++) {
                 System.out.printf("%d  ", ar[i]);
 
