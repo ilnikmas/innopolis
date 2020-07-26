@@ -1,22 +1,20 @@
 package ru.maslenchenko.ilya.lesson23;
 
-import static ru.maslenchenko.ilya.lesson23.Shop.products;
-
 public class Run {
     public static void main(String[] args) {
-        Shop shop = new Shop();
-        shop.addProduct("Каша", 2);
-        shop.addProduct("Водка", 15);
-        shop.addProduct("Мясо", 7);
-        //System.out.println(shop.getProductQuantity("Водка"));
-        //System.out.println(shop.getPosition("Водка"));
-        for (Product pr : products) {
-            System.out.println(pr);
-        }
+        CustomerBasket customerBasket = new CustomerBasket();
+        customerBasket.addProduct("Каша", 2);
+        customerBasket.addProduct("Водка", 15);
+        customerBasket.addProduct("Мясо", 7);
+        System.out.println(customerBasket.toString());
         System.out.println();
-        shop.addProduct("Каша", 5);
-        for (Product pr : products) {
-            System.out.println(pr);
-        }
+        customerBasket.addProduct("Каша", 5);
+        System.out.println(customerBasket.toString());
+        customerBasket.removeProduct("Водка");
+        System.out.println(customerBasket.toString());
+        System.out.println(customerBasket.getProductQuantity("Каша"));
+        System.out.println(customerBasket.getProducts());
+        customerBasket.clear();
+        System.out.println(customerBasket.toString());
     }
 }
