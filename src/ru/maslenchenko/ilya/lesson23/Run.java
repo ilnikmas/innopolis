@@ -12,6 +12,8 @@ public class Run {
         System.out.println(customerBasket.toString());
         customerBasket.removeProduct("Водка");
         System.out.println(customerBasket.toString());
+        customerBasket.updateProductQuantity("Колбаса", 5);
+        System.out.println(customerBasket.getProductQuantity("Водка"));
         System.out.println(customerBasket.getProductQuantity("Каша"));
         System.out.println(customerBasket.getProducts());
         customerBasket.clear();

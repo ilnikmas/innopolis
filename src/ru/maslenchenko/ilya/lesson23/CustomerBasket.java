@@ -39,8 +39,10 @@ public class CustomerBasket implements Basket {
         for (Product pr : products) {
             if (pr.getName().equals(product)) {
                 pr.setQuantity(quantity);
+                return;
             }
         }
+        System.out.printf("Продукт %s отсутствует в корзине.\n", product);
     }
 
     @Override
@@ -59,13 +61,13 @@ public class CustomerBasket implements Basket {
 
     @Override
     public int getProductQuantity(String product) {
-        int qty = 0;
         for (Product pr : products) {
             if (pr.getName().equals(product)) {
-                qty = pr.getQuantity();
+                return pr.getQuantity();
             }
         }
-        return qty;
+        System.out.printf("Продукт %s отсутствует в корзине.\n", product);
+        return 0;
     }
 
     @Override
