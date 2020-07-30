@@ -10,43 +10,29 @@ public class CustomerBasket implements Basket {
         boolean productIsAbsentInBasket = true;
         if (!products.isEmpty()) {
             Iterator iter = products.entrySet().iterator();
-            while (iter.hasNext()) {
-                if (iter.next().equals(product)) {
-                    int temp = 0;
-                    productIsAbsentInBasket = false;
-                    Map.Entry mEntry = (Map.Entry) iter.next();
-                    temp = (Integer) mEntry.getValue() + quantity;
-                    mEntry.setValue(temp);
-                }
+        while (iter.hasNext()) {
+            Map.Entry mEntry = (Map.Entry) iter.next();
+            if (mEntry.getKey() == product) {
+                productIsAbsentInBasket = false;
+                mEntry.setValue((Integer) mEntry.getValue() + quantity);
             }
         }
+    }
         if (productIsAbsentInBasket) products.put(product, quantity);
     }
 
     @Override
     public void removeProduct(String product) {
-        int index = 0;
         if (!products.isEmpty()) {
-            Iterator iter = products.entrySet().iterator();
-            while (iter.hasNext()) {
-                Map.Entry mEntry = (Map.Entry) iter.next();
-                if (mEntry.getKey().equals(product)) {
-                    products.remove(product);
-                }
-            }
-        }
-     }
+            products.remove(product);
+        } else System.out.printf("Товар %s отсутствует в корзине", product);
+    }
 
     @Override
     public void updateProductQuantity(String product, int quantity) {
-        Iterator iter = products.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry mEntry = (Map.Entry) iter.next();
-            if (mEntry.getKey().equals(product)) {
-                products.put(product, quantity);
-            }
-        }
-        System.out.printf("Продукт %s отсутствует в корзине.\n", product);
+        if (products.containsKey(product)) {
+            products.put(product, quantity);
+        } else System.out.printf("Товар %s отвутствует в корзине\n", product);
     }
 
     @Override
@@ -56,26 +42,15 @@ public class CustomerBasket implements Basket {
 
     @Override
     public List<String> getProducts() {
-        List<String> basketList = new ArrayList<>();
-        Iterator iter = products.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry mEntry = (Map.Entry) iter.next();
-            basketList.add(mEntry.getKey().toString());
-        }
-        return basketList;
+        return new ArrayList<>(products.keySet());
     }
 
     @Override
     public int getProductQuantity(String product) {
-        Iterator iter = products.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry mEntry = (Map.Entry) iter.next();
-            if (mEntry.getKey().equals(product)) {
-                return (Integer) mEntry.getValue();
-            }
-        }
-        System.out.printf("Продукт %s отсутствует в корзине.\n", product);
-        return 0;
+        if (products.get(product) != null) {
+            return products.get(product);
+        } else System.out.printf("Товар %s отсутствует в корзине", product);
+        return -1;
     }
 
     @Override
