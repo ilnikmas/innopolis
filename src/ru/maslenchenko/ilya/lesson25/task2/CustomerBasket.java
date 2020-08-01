@@ -10,14 +10,14 @@ public class CustomerBasket implements Basket {
         boolean productIsAbsentInBasket = true;
         if (!products.isEmpty()) {
             Iterator iter = products.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry mEntry = (Map.Entry) iter.next();
-            if (mEntry.getKey() == product) {
-                productIsAbsentInBasket = false;
-                mEntry.setValue((Integer) mEntry.getValue() + quantity);
+            while (iter.hasNext()) {
+                Map.Entry mEntry = (Map.Entry) iter.next();
+                if (mEntry.getKey() == product) {
+                    productIsAbsentInBasket = false;
+                    mEntry.setValue((Integer) mEntry.getValue() + quantity);
+                }
             }
         }
-    }
         if (productIsAbsentInBasket) products.put(product, quantity);
     }
 
