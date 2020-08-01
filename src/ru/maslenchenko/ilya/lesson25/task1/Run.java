@@ -33,7 +33,7 @@ public class Run {
             val = mEntry.getValue().toString();
             for (String lst: list) {
                 arrayListIterator++;
-                if (val == lst && hashMapIterator != arrayListIterator) {
+                if (val.equals(lst) && hashMapIterator != arrayListIterator) {
                     System.out.println("Дубли присутствуют");
                     return true;
                 }
