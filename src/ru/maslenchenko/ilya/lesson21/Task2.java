@@ -20,9 +20,9 @@ public class Task2 {
 
     static void printArray(int[] ar) {
         for (int i = 0; i < ar.length; i++) {
-                System.out.printf("%d  ", ar[i]);
+            System.out.printf("%d  ", ar[i]);
 
-            }
-        System.out.println();
         }
+        System.out.println();
+    }
 }
